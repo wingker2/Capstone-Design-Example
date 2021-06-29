@@ -1,24 +1,9 @@
-# Project title (Capstone design 2020-2)
-* 안정근
+1. 과제 개요
+   가. 과제 선정 배경 및 필요성
+ 기존의 게임들, 특히나 1인칭 게임들은 둠이나 카스에서부터 시작하여 오버워치 배틀그라운드에 이르기까지 지난 수십년동안 많은 발전을 이루어냈습니다. 그러나 그래픽이나 장르, 매커니즘같은 부분들의 혁신은 기존보다 활발하게 적용되는 반면, 캐릭터 간의 상호작용은 예전보다 훨씬 혁신적인 시스템이 등장했음에도 불구하고 적용에 있어서는 다른 부분보다 매우 더딘 경향이 있습니다. 이는 특히나 인디쪽으로 갈수록 커지는데 대부분의 인디 게임에서는 그냥 제외되고 있다고 봐도 무방합니다. 물론 이러한 Action시스템의 도입이 그 자체만으로도 게임의 개발량을 무시할 수 없을 정도로 증가시킨다는 단점이 있어 의도적으로 제외했을 수도 있습니다. 그러나 Quick-Time-Event나 Interact 시스템이 적용하기에 너무 어렵고 Cost도 높다는 편견이 만연해 있어 지례짐작으로 게임에서 제외하는 경우도 없지 않을 것 입니다. 따라서 현재 3D 게임 개발에 있어 고평가 받고 있는 언리얼엔진을 사용하여 게임을 개발하는 경험을 쌓는 동시에 기존의 게임에서 벗어나 깊이를 더해줄 수 있을 Interactive Animation 시스템과 Quick Time Event(QTE) 시스템을 구현해보고 보다 Cheap하고 쉬운 방법을 찾고 연구해보고자 합니다.
 
-## Overview
-* 언리얼 엔진4을 통한 QTE와 Interactive Game 기술의 필요성. 매우 유용한 기술이나 언리얼엔진에서 자체적으로 지원을 하지 않아 인디게임 개발자들의 경우 개발에 어려움이 있다. 
-* 언리얼 엔진4를 사용하여 Cheap하고 편리한 Interactive_Animation_QTE 게임의 개발.
-
-## Schedule
-| Contents | March | April |  May  | June  |   Progress   |
-|----------|-------|-------|-------|-------|--------------|
-| Leveling |   O   |   O   |       |       |       -      |
-|QTE-System|       |   O   |   O   |   O   |       -      |
-
-## Results
-* QTE-Interactive-Animation이 포함된 UE4게임을 제작할 수 있었습니다.
-
-
-## Conclusion
-* Cheap한 Interactive-Animation 시스템을 연구하여 QTE가 대거 포함된 UE4 게임을 제작할 수 있었으나 주제에 몰입되어 게임의 완성도가 현저하게 떨어진 역효과가 있었습니다. 
-
-## Reports
-* Upload or link (e.g. Google Drive files with share setting)
-* Midterm: [Report](Reports/Midterm.pdf)
-* Final: [Report](Reports/Final.pdf), [Demo video](Reports/Demo.mp4)
+   나. 과제 주요내용
+ 본 과제는 시스템적으로 크게 두가지 파트로 나뉘어져 있으며 동시에 스토리적으로도 두가지 파트로 나뉘어져 있습니다. 먼저 시스템으로는 Quick-Time-Event 시스템과 그와 동반되는 Interactive-Animation 시스템이 있습니다. 이 중 Quick-Time-Event는 주로 버튼액션 방식으로 구현되며 특정한 상황에서 플레이어의 행동을 성공시키거나 적대적 NPC의 행동을 회피하거나 방어하는데 사용됩니다. 그리고 Interactive-Animation 시스템은 앞서 언급한 QTE와 연동되는 시스템으로 NPC의 Animation과 Player의 Animation이 서로 상호작용이 가능하도록 일치시키는 역활을 합니다. 또한 스토리적으로 나뉜 두 파트는 각각의 상황에서 QTE시스템이 적용되는 방식을 보여줍니다. 첫번째 파트에서는 플레이어가 비교적 자유롭게 움직이며 적대적 NPC를 상대할 때 QTE-Interactive-Animation이 적용되는 방식을 보여주고 두번째 파트에서는 일련의 Sequence가 자동으로 진행되어지는 과정에서 QTE-Interactive-Animation이 자연스럽게 적용되는 과정을 보여줍니다. 
+  
+   다. 최종결과물의 목표
+ 본 과제의 최종결과물의 목표는 게임 중 각각의 상황에서 QTE-Interactive-Animation이 어떻게 구현이 될 수 있는지를 보여주는 데 있습니다. 일반적으로 생각하기에 하나 이상의 캐릭터와 애니메이션들을 서로 상호작용시키는 과정에서 Quick-Time-Event을 적용하는 것은 매우 코스트가 크고 어렵다는 인식이 있습니다. 그렇기에 이 프로젝트를 통해 그러한 편견을 깨고 본 결과물에서 보여지는 것처럼 쉽고 Cheap한 방법이 있다는 것을 제시하고자 합니다.    

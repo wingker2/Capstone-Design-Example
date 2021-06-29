@@ -14,10 +14,21 @@
  
  # 3. 진행내용
  ## 3-1. 과제진행 내용
- ![QTE_Images](https://user-images.githubusercontent.com/38785553/123754571-03120880-d8f6-11eb-9373-3d3cf691e3f4.png)
+![QTE_RealTime2](https://user-images.githubusercontent.com/38785553/123763605-ededa780-d8fe-11eb-9719-56d98e9645fa.png)
+![QTE_RealTime](https://user-images.githubusercontent.com/38785553/123763615-efb76b00-d8fe-11eb-9f13-a1e4d8251b30.png)
+
  먼저 기본적으로 게임에 필요한 레벨 디자인을 러프하게 만들었습니다. 이후 게임에 필요한 캐릭터들을 가져와서 새롭게 텍스쳐링을 하고 리깅을 해서 UE4로 보내고 기본적인 캐릭터 Blueprint들을 만들어서 서로 연결을 시켰습니다. 이후부터는 스토리 파트1을 위한 Animation들을 만들기 시작했습니다. 또한 플레이어를 공격하는 적대적 NPC를 상대하여 일정한 공간안에서 움직이고 반격하며 그렇게 게임이 진행됨에 따라 자연스럽게 QTE-Interactive-Animation이 실행되어 버튼 판정을 통해 게임을 이어나갈 수 있도록 알고리즘들을 설계하였습니다. 중간발표 바로 일주일 전인 4월 23일에 플레이어에게 컨트롤권을 준 상태에서 QTE를 적용시키는 스토리 파트1을 어느정도 완성할 수 있었습니다. 또한 최종 발표일인 6월 18일까지 자동으로 진행되는 중에 QTE-Animation이 자동으로 적용되는 Part2 부분을 완성했으며 추가적인 Sound와 Particle시스템까지 어느정도 완성하여 적용시켰습니다.  
 
 ## 3-2. 진행내용의 주요특징 및 설명
+
+![QTE_Images](https://user-images.githubusercontent.com/38785553/123754571-03120880-d8f6-11eb-9373-3d3cf691e3f4.png)
+![Skeleton](https://user-images.githubusercontent.com/38785553/123764235-900d8f80-d8ff-11eb-82e0-98883f180280.png)
+![Interactive_Images](https://user-images.githubusercontent.com/38785553/123757642-24c0bf00-d8f9-11eb-95b2-0bea70c9fc04.png)
+![Blueprint1](https://user-images.githubusercontent.com/38785553/123764256-9439ad00-d8ff-11eb-89fb-23c60220b78c.png)
+![Blueprint2](https://user-images.githubusercontent.com/38785553/123764263-96037080-d8ff-11eb-8792-2a7410d65c8f.png)
+![Blueprint3](https://user-images.githubusercontent.com/38785553/123764267-97349d80-d8ff-11eb-95bb-dc5acabe9888.png)
+![Blueprint4](https://user-images.githubusercontent.com/38785553/123764271-9865ca80-d8ff-11eb-81e8-16b24eab5c4d.png)
+
  1인칭 게임이기에 플레이어의 애니메이션은 많은 부분이 생략되어있습니다. 보이지 않는 부분은 대체로 제대로 구현이 되어있지 않습니다. 그리고 이는 상호작용을 하는 NPC들에게도 동일하게 적용되어 있습니다. 시간을 절약하기 위한 방편입니다. 게임에 등장하게 될 캐릭터들은 플레이어를 포함하여 6명이며 파트1에는 두명이 등장하고 나머지는 파트2에 등장합니다. 자유로운 행동이 설정되어 있는 파트1에 여러명의 캐릭터를 등장하기에는 Cost가 너무 커질 것 같아 최대한 줄인 결과입니다. 내용을 설명드리면, 파트1에서 플레이어는 한정된 공간인 밀실에서 무기를 들고 있는 적대적 캐릭터와 싸우게 됩니다. 플레이어는 knife를 휘둘러서 저항이 가능하고 적대적 npc의 체력을 일정 수치 이하로 깎거나 특정한 위치에 있게 된다면 QTE가 가미된 Interactive-Animation이 실행됩니다. 이때 버튼 판정을 실패한다면 게임오버가 되고 버튼 판정을 성공한다면 게임을 더 이어갈 수 있습니다. 그리고 플레이어가 적대적 NPC의 체력을 0보다 이하로 깎는 것을 성공한다면 일련의 QTE-Interactive-Animation을 통해 밀실에서 탈출하게 됩니다. 여기까지가 파트1입니다. 그리고 파트2부터는 캐릭터가 어느 지점에 도착한다면 자동으로 애니메이션이 진행되게 됩니다. 이 Sequence중에는 플레이어의 조작권한은 박탈되며 QTE-Interactive-Animation의 결과에 따라 게임이 더 진행될지 아니면 GameOver가 될지 정해지게 되고 최종적으로 모든 QTE를 성공하게 된다면 게임이 종료됩니다.
  추가로, QTE와 Interactive-Animation에 대해 설명을 드리자면, 먼저 QTE는 간단하게 두가지로 나뉩니다. 이 두가지는 각각 버튼연타형 QTE와 한정된 시간 안에 올바른 키를 누르는 QTE로서 본 프로젝트에서는 이 두가지 모두 성공하기 어렵지 않도록 난이도를 설정했습니다. 그리고 Interactive-Animation은 각 캐릭터들마다 Interactive용 Joint를 하나씩 둬서 이 Joint들을 같은 위치, 같은 Rotate로 일치시키는 방식을 통해 구현을 했습니다. 
  
